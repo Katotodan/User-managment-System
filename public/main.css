@@ -47,6 +47,12 @@ nav{
     background-color: black;
     margin: 0.5rem 0;
 }
+form button{
+    size: auto;
+    border: 0;
+    padding:0 0.5rem;
+    border-radius: 0 50% 50% 0;
+}
 form div p{
     width: 100%;
 }

@@ -42,11 +42,22 @@ const deleteUser = async (req,res) =>{
     }
 }
 
+const searchUser = async(req,res) =>{
+    try {
+        const users = await addUserModel.find({firstName:{$regex:req.body.user,$options:"i"}})
+        res.render('home', {users: users})
+    } catch (error) {
+        console.log(error)
+        res.send("Something went wrong")
+    }
+}
+
 
 module.exports = {
     addNewUSer,
     viewUser,
     editUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    searchUser
 }

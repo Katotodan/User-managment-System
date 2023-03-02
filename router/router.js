@@ -1,5 +1,12 @@
 const  express = require('express')
-const {addNewUSer,viewUser,editUser,updateUser,deleteUser} = require('../controller/controller')
+const {
+    addNewUSer,
+    viewUser,
+    editUser,
+    updateUser,
+    deleteUser,
+    searchUser
+} = require('../controller/controller')
 const router = express.Router()
 
 router.route('/newUser').get((req,res) =>{
@@ -10,4 +17,5 @@ router.route('/editUser/:id').get(editUser)
 router.route('/viewUser/:id').get(viewUser)
 router.route('/editUser/:id').put(updateUser)
 router.route('/deteteUser/:id').delete(deleteUser)
+router.route('/search').post(searchUser)
 module.exports = router
